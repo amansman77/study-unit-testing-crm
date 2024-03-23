@@ -15,7 +15,7 @@ public class Database {
             User user = findUserOptional.get();
             return user.toList();
         } else {
-            return List.of();
+            return new User().toList();
         }
     }
 
