@@ -1,5 +1,6 @@
 package com.ho.study.unit.testing.changeemail.example7_1;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
@@ -25,8 +26,10 @@ public class UserTest {
 
         // then
         List<Object> findUserData = Database.getUserById(userId);
-        assertEquals(1, findUserData.get(0));
-        assertEquals("second@email.com", findUserData.get(1));
-        assertEquals(UserType.CUSTOMER, findUserData.get(2));
+        assertAll("사용자의 이메일만 변경됩니다.", () -> {
+            assertEquals(1, findUserData.get(0), "사용자 아이디는 다를 수 없습니다.");
+            assertEquals("second@email.com", findUserData.get(1), "입력받은 이메일로 변경합니다.");
+            assertEquals(UserType.CUSTOMER, findUserData.get(2), "도메인이 회사의 도메인과 다르면 손님입니다.");
+        });
     }
 }
