@@ -13,4 +13,5 @@
 - 이메일이 변경되면 시스템은 메시지 버스로 메시지를 보내 외부 시스템에 알려야 한다.
 
 ## 패키지 소개
+
 - com.ho.study.unit.testing.changeemail.example7_1 : 예제 7.1 CRM 시스템의 초기 구현을 자바 스타일로 변경한다.
